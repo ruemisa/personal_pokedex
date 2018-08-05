@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Strewbs' Pokedex</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Bungee+Inline|Monofett|Syncopate" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+
+  <div class="wrapper" id="blank">
+    <nav class="header">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Strewbs</a>
+        <ul class="right soc-nav">
+          <li><a href="#" target="_blank" id="blue"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" target="_blank" id="yellow"><i class="fas fa-camera-retro"></i></a></li>
+          <li><a href="#" target="_blank" id="red"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <h1 class="pokedex-text">POKEDEX</h1>
+      <div class="row poke-grid">
+        <div class="col s4">
+          <div class="card-panel poke-1">
+            <a href="#" onclick="openDisplay('Vaporeon')"> <!-- Vaporeon or (134)-->
+              <h3 id="vaporeon">Vaporeon</h3>
+            </a>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="card-panel poke-2">
+            <a href="#" onclick="openDisplay('Jolteon')"> <!-- Jolteon or (135)-->
+              <h3 id="jolteon">Jolteon</h3>
+            </a>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="card-panel poke-3">
+            <a href="#" onclick="openDisplay('Flareon')"> <!-- Flareon or (136)-->
+              <h3 id="flareon">Flareon</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+  </div>
+    <div class="row footer">
+      <div class="col s12">
+        <div class="card-panel">
+          <div class="contact-info">
+            <p>+1 555.222.3322</p>
+            <p>strewbs@rocketmail.com</p>
+          </div>
+          <div class="site-nav">
+            <ul>
+              <li><a href="#">Developers</a></li>
+              <li><a href="#">Contract</a></li>
+            </ul>
+          </div>
+          <button class="btn btn-large fight" onclick="frustration()">Battle</button>
+          <span class="copyright">&copy 2018 | Ruel Misa. All rights reserved</span>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="displayBox">
+      <div class="pokemonInfo" id="displayStats">
+        <h2 id="name"></h2>
+        <img src="" alt="" id="image">
+        <p id="hp"></p>
+        <p id="attack"></p>
+        <p id="defense"></p>
+        <h4 id="abilities"></h4>
+          <p class="abil-text" id="abilOne"></p>
+          <p class="abil-text" id="abilTwo"></p>
+        <p id="bio"></p>
+        <a href="javascript:void[0]" id="close" onclick="closeDisplay()">&times;</a>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script> <!-- main.js (or test.js to apply that one function gamble) -->
+</body>
+</html>

@@ -1,0 +1,413 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Black Ops One", cursive;
+  color: #000;
+  background-color: #000; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+li {
+  list-style: none; }
+
+.wrapper {
+  background: center/cover no-repeat url("images/eeveelution.jpg"); }
+
+/* HEADER AREA */
+.header {
+  background-color: inherit;
+  padding: 1% 1% 10% 1%;
+  margin-bottom: 5%;
+  mix-blend-mode: lighten; }
+
+.nav-wrapper .brand-logo {
+  font-size: 70px;
+  color: #fff;
+  margin-top: 2%; }
+
+.soc-nav {
+  padding: 1.5%; }
+  .soc-nav:hover {
+    opacity: 0.85; }
+  .soc-nav i {
+    color: #fff;
+    font-size: 35px; }
+    .soc-nav i:hover {
+      font-size: 45px;
+      transition: 0.5s; }
+
+/* POKEDEX */
+.container {
+  height: auto;
+  width: 100%;
+  padding: 2% 0;
+  margin-bottom: 5%;
+  background-color: gray;
+  text-align: center;
+  color: #fff;
+  mix-blend-mode: hard-light; }
+  .container .card-panel {
+    width: 100%;
+    height: 50vh;
+    align-content: center;
+    text-align: center;
+    opacity: 0.85; }
+    .container .card-panel a {
+      font-size: 30px; }
+    .container .card-panel h3 {
+      margin-top: 35%; }
+
+.pokedex-text {
+  padding-bottom: 2%;
+  font-size: 70px; }
+
+.poke-grid {
+  padding: 10% 3%; }
+  .poke-grid .poke-1 {
+    background-color: #56cde2; }
+    .poke-grid .poke-1:hover {
+      background: url("images/vaporeon.jpg") no-repeat;
+      background-size: cover;
+      color: blue;
+      transition: 1s; }
+    .poke-grid .poke-1:active {
+      color: #000;
+      transition: none; }
+  .poke-grid .poke-2 {
+    background-color: #dfca11; }
+    .poke-grid .poke-2:hover {
+      background: url("images/jolteon.png") no-repeat;
+      background-size: cover;
+      background-position: right;
+      color: yellow;
+      transition: 1s; }
+    .poke-grid .poke-2:active {
+      color: #000;
+      transition: none; }
+  .poke-grid .poke-3 {
+    background-color: #d55330; }
+    .poke-grid .poke-3:hover {
+      background: url("images/flareon.jpg") no-repeat;
+      background-size: cover;
+      color: red;
+      transition: 1s; }
+    .poke-grid .poke-3:active {
+      color: #000;
+      transition: none; }
+
+/* FOOTER AREA */
+.footer {
+  mix-blend-mode: lighten; }
+  .footer .card-panel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas: "contact . . fight" "nav . . copyright";
+    padding: 2%;
+    background-color: #000;
+    color: #fff; }
+  .footer .contact-info {
+    grid-area: contact;
+    margin-bottom: 10%;
+    font-size: 12px; }
+  .footer .site-nav {
+    grid-area: nav; }
+    .footer .site-nav li {
+      display: inline;
+      padding: 2% 5%; }
+    .footer .site-nav a {
+      font-size: 15px; }
+      .footer .site-nav a:hover {
+        font-weight: 700;
+        color: red;
+        transition: 0.3s; }
+  .footer .fight {
+    grid-area: fight;
+    font-family: inherit;
+    margin-bottom: 10%;
+    background-color: red;
+    text-transform: uppercase; }
+    .footer .fight:hover {
+      background-color: #fff;
+      color: red;
+      font-size: 30px;
+      transition: 0.5s; }
+  .footer .copyright {
+    grid-area: copyright;
+    font-size: 12px;
+    text-align: center; }
+
+/* EFFECTS */
+#blue i:hover {
+  color: #56cde2; }
+
+#yellow i:hover {
+  color: #dfca11; }
+
+#red i:hover {
+  color: #d55330; }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding: 5%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); }
+  .modal .pokemonInfo {
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    margin: auto;
+    padding: 5%;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5%;
+    opacity: 0.85; }
+    .modal .pokemonInfo p {
+      margin-bottom: 2%; }
+  .modal #close {
+    color: #000;
+    position: absolute;
+    top: 1%;
+    right: 3.5%;
+    font-size: 35px;
+    font-weight: 700; }
+    .modal #close:hover {
+      color: rgba(238, 21, 21, 0.9); }
+    .modal #close:active {
+      color: #000; }
+  .modal #image {
+    height: 20vh;
+    weight: 20vw; }
+  .modal #name {
+    text-transform: capitalize; }
+  .modal #abilities {
+    margin-bottom: 2%; }
+  .modal .abil-text {
+    text-transform: uppercase; }
+  .modal #bio {
+    font-size: 10px; }
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 375px) {
+  body {
+    overflow: hidden; }
+
+  .header {
+    margin-bottom: .5%; }
+
+  .nav-wrapper .brand-logo {
+    font-size: 30px;
+    left: 15%;
+    margin-left: 10%; }
+
+  .soc-nav {
+    position: absolute;
+    right: 0; }
+    .soc-nav i {
+      font-size: 20px; }
+      .soc-nav i:hover {
+        font-size: 30px; }
+
+  .container {
+    margin-bottom: 35%; }
+    .container .card-panel {
+      width: 100%;
+      height: auto;
+      margin-top: 25%; }
+      .container .card-panel h3 {
+        margin-top: 35%;
+        font-size: 12px;
+        margin-right: 50%; }
+
+  .pokedex-text {
+    padding-bottom: 0;
+    font-size: 45px; }
+
+  .footer .card-panel {
+    padding: 0; }
+  .footer .contact-info {
+    margin-bottom: 5%;
+    font-size: 10px; }
+  .footer .site-nav li {
+    display: block; }
+  .footer .site-nav a {
+    font-size: 12px; }
+  .footer .fight {
+    margin-bottom: 5%;
+    font-size: 12px; }
+  .footer .copyright {
+    font-size: 10px;
+    margin-top: 10%; } }
+@media only screen and (min-width: 376px) and (max-width: 640px) {
+  body {
+    overflow: hidden; }
+
+  .header {
+    margin-bottom: .5%; }
+
+  .nav-wrapper .brand-logo {
+    font-size: 35px;
+    left: 13%;
+    margin-left: 10%; }
+
+  .soc-nav {
+    position: absolute;
+    right: 0; }
+    .soc-nav i {
+      font-size: 20px; }
+      .soc-nav i:hover {
+        font-size: 30px; }
+
+  .container {
+    margin-bottom: 35%; }
+    .container .card-panel {
+      width: 100%;
+      height: auto;
+      margin-top: 25%; }
+      .container .card-panel h3 {
+        margin-top: 35%;
+        font-size: 15px; }
+
+  .pokedex-text {
+    padding-bottom: 0;
+    font-size: 45px; }
+
+  .footer .card-panel {
+    padding: 0; }
+  .footer .contact-info {
+    margin-bottom: 5%;
+    font-size: 10px; }
+  .footer .site-nav li {
+    display: block; }
+  .footer .site-nav a {
+    font-size: 12px; }
+  .footer .fight {
+    margin-bottom: 5%;
+    font-size: 12px; }
+  .footer .copyright {
+    font-size: 10px;
+    margin-top: 10%; } }
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+  body {
+    overflow: hidden; }
+
+  .header {
+    margin-bottom: .5%; }
+
+  .nav-wrapper .brand-logo {
+    font-size: 50px;
+    left: 10%;
+    margin-left: 10%; }
+
+  .soc-nav {
+    position: absolute;
+    right: 0; }
+    .soc-nav i {
+      font-size: 30px; }
+      .soc-nav i:hover {
+        font-size: 35px; }
+
+  .container {
+    margin-bottom: 15%; }
+    .container .card-panel {
+      width: 100%;
+      height: auto;
+      margin-top: 2%;
+      padding: 27% 0; }
+      .container .card-panel h3 {
+        margin-top: 20%;
+        font-size: 30px; }
+
+  .pokedex-text {
+    padding-bottom: 0;
+    font-size: 50px; }
+
+  .footer .card-panel {
+    padding: 0; }
+  .footer .contact-info {
+    margin-bottom: 5%;
+    font-size: 12px; }
+  .footer .site-nav li {
+    display: inline; }
+  .footer .site-nav a {
+    font-size: 12px; }
+  .footer .fight {
+    margin: 2%;
+    font-size: 15px; }
+  .footer .copyright {
+    font-size: 12px;
+    padding: 0 5%;
+    margin: 2% 0; } }
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    overflow: auto; }
+
+  .header {
+    margin-bottom: 5%; }
+
+  .nav-wrapper .brand-logo {
+    font-size: 70px;
+    left: 0;
+    margin-left: 2%; }
+
+  .soc-nav {
+    position: absolute;
+    right: 0; }
+    .soc-nav i {
+      font-size: 35px; }
+      .soc-nav i:hover {
+        font-size: 45px; }
+
+  .container {
+    margin-bottom: 2%; }
+    .container .card-panel {
+      width: 100%;
+      height: auto;
+      margin-top: 10%;
+      padding: 35% 0; }
+      .container .card-panel h3 {
+        margin-top: 10%;
+        font-size: 45px; }
+
+  .pokedex-text {
+    padding-bottom: 0;
+    font-size: 70px; }
+
+  .poke-3:hover {
+    background-position: right; }
+
+  .footer .card-panel {
+    padding: 0; }
+  .footer .contact-info {
+    margin-bottom: 10%;
+    font-size: 12px; }
+  .footer .site-nav li {
+    display: block;
+    padding: 2%; }
+  .footer .site-nav a {
+    font-size: 15px; }
+  .footer .fight {
+    margin: 5% 0;
+    font-size: 20px; }
+    .footer .fight:hover {
+      font-size: 30px; }
+  .footer .copyright {
+    font-size: 12px;
+    padding: 0 5%;
+    margin-top: 5%; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,621 @@
+// Main Global Styling
+$global-bg-color: #000;
+$global-color: #000;
+$main-height: 100%;
+$main-width: 100%;
+$main-font: 'Black Ops One', cursive;
+$copy: inherit;
+$no-style: none;
+
+$panel-height: 50vh;
+$heavy-opacity: .85;
+$straight: inline;
+$upper: uppercase;
+$capital: capitalize;
+$long-trans: 1s;
+$mid-trans: .5s;
+$short-trans: .3s;
+$heavy-text: 700;
+//Paddings & Margins
+
+$zero: 0;
+$ten-three: 10% 3%;
+$two-five: 2% 5%;
+$two-top-bot: 2% 0;
+$ten-bottom-heavy: 1% 1% 10% 1%;
+
+$thirtyfive-space: 35%;
+$ten-space: 10%;
+$onefive-space: 1.5%;
+$five-space: 5%;
+$two-space: 2%;
+
+
+// Styling
+
+$container-bgc: gray;
+$main-color: #fff;
+$water-color: #56cde2;
+$electric-color: #dfca11;
+$fire-color: #d55330;
+$blood: red;
+$sun: yellow;
+$sky: blue;
+
+$title-font: 70px;
+$brand-font: 50px;
+$blow-font: 45px;
+$icon-font: 35px;
+$panel-text: 30px;
+$nav-text: 15px;
+$small-text: 12px;
+
+$position-mid: center;
+$light-blend: lighten;
+$hard-blend: hard-light;
+$bg-cover: cover;
+$bg-right: right;
+
+$char-img-h: 20vh;
+$char-img-w: 20vw;
+
+// Media Queries
+
+$breakpoint-iphone: 375px;
+$breakpoint-phone: 640px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+////
+
+* {
+  padding: $zero;
+  margin: $zero;
+  box-sizing: border-box;
+}
+
+body {
+  height: $main-height;
+  width: $main-width;
+  font-family: $main-font;
+  color: $global-color;
+  background-color: $global-bg-color;
+}
+
+a {
+  text-decoration: $no-style;
+  color: $copy;
+}
+
+li {
+  list-style: $no-style;
+}
+
+.wrapper {
+  background: center / cover no-repeat url('images/eeveelution.jpg');
+}
+
+/* HEADER AREA */
+
+.header {
+  background-color: $copy;
+  padding: $ten-bottom-heavy;
+  margin-bottom: $five-space;
+  mix-blend-mode: $light-blend;
+}
+
+.nav-wrapper .brand-logo {
+  font-size: $title-font;
+  color: $main-color;
+  margin-top: $two-space;
+}
+
+.soc-nav {
+  padding: $onefive-space;
+  &:hover {
+    opacity: $heavy-opacity;
+  }
+  i {
+    color: $main-color;
+    font-size: $icon-font;
+    &:hover {
+      font-size: $blow-font;
+      transition: $mid-trans;
+    }
+  }
+}
+
+/* POKEDEX */
+
+.container {
+  height: auto;
+  width: $main-width;
+  padding: $two-top-bot;
+  margin-bottom: $five-space;
+  background-color: $container-bgc;
+  text-align: $position-mid;
+  color: $main-color;
+  mix-blend-mode: $hard-blend;
+  .card-panel {
+    width: $main-width;
+    height: $panel-height;
+    align-content: $position-mid;
+    text-align: $position-mid;
+    opacity: $heavy-opacity;
+    a {
+      font-size: $panel-text;
+    }
+    h3 {
+      margin-top: $thirtyfive-space;
+    }
+  }
+}
+
+.pokedex-text {
+  padding-bottom: $two-space;
+  font-size: $title-font;
+}
+
+.poke-grid {
+  padding: $ten-three;
+  .poke-1 {
+    background-color: $water-color;
+    &:hover {
+      background: url('images/vaporeon.jpg') no-repeat;
+      background-size: $bg-cover;
+      color: $sky;
+      transition: $long-trans;
+    }
+    &:active {
+      color: $global-color;
+      transition: $no-style;
+    }
+  }
+  .poke-2 {
+    background-color: $electric-color;
+    &:hover {
+      background: url('images/jolteon.png') no-repeat;
+      background-size: $bg-cover;
+      background-position: $bg-right;
+      color: $sun;
+      transition: $long-trans;
+    }
+    &:active {
+      color: $global-color;
+      transition: $no-style;
+    }
+  }
+  .poke-3 {
+    background-color: $fire-color;
+    &:hover {
+      background: url('images/flareon.jpg') no-repeat;
+      background-size: $bg-cover;
+      color: $blood;
+      transition: $long-trans;
+    }
+    &:active {
+      color: $global-color;
+      transition: $no-style;
+    }
+  }
+}
+
+/* FOOTER AREA */
+
+.footer {
+  mix-blend-mode: $light-blend;
+  .card-panel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas:
+    "contact . . fight"
+    "nav . . copyright";
+    padding: $two-space;
+    background-color: $global-bg-color;
+    color: $main-color;
+  }
+  .contact-info {
+    grid-area: contact;
+    margin-bottom: $ten-space;
+    font-size: $small-text;
+  }
+  .site-nav {
+    grid-area: nav;
+    li {
+      display: $straight;
+      padding: $two-five;
+    }
+    a {
+      font-size: $nav-text;
+      &:hover {
+        font-weight: $heavy-text;
+        color: $blood;
+        transition: $short-trans;
+      }
+    }
+  }
+  .fight {
+    grid-area: fight;
+    font-family: $copy;
+    margin-bottom: $ten-space;
+    background-color: $blood;
+    text-transform: $upper;
+    &:hover {
+      background-color: $main-color;
+      color: $blood;
+      font-size: $panel-text;
+      transition: $mid-trans;
+    }
+  }
+  .copyright {
+    grid-area: copyright;
+    font-size: $small-text;
+    text-align: $position-mid;
+  }
+}
+
+/* EFFECTS */
+
+#blue i:hover {
+  color: $water-color;
+}
+
+#yellow i:hover {
+  color: $electric-color;
+}
+
+#red i:hover {
+  color: $fire-color;
+}
+
+.modal {
+  display: $no-style;
+  position: fixed;
+  z-index: 1;
+  padding: $five-space;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: $main-width;
+  max-width: $main-width;
+  max-height: $main-height;
+  background-color: rgba(0, 0, 0, .4);
+  .pokemonInfo {
+    position: relative;
+    background-color: $global-bg-color;
+    color: $main-color;
+    margin: auto;
+    padding: $five-space;
+    width: $main-width;
+    height: $main-height;
+    border-radius: 1.5%;
+    opacity: $heavy-opacity;
+    p {
+      margin-bottom: $two-space;
+    }
+  }
+  #close {
+    color: $global-color;
+    position: absolute;
+    top: 1%;
+    right: 3.5%;
+    font-size: $icon-font;
+    font-weight: $heavy-text;
+    &:hover {
+      color: rgba(238, 21, 21, 0.9);
+    }
+    &:active {
+      color: $global-color;
+    }
+  }
+  #image {
+    height: $char-img-h;
+    weight: $char-img-w;
+  }
+  #name {
+    text-transform: $capital;
+  }
+  #abilities {
+    margin-bottom: $two-space;
+  }
+  .abil-text {
+    text-transform: $upper;
+  }
+  #bio {
+    font-size: 10px;
+  }
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: $breakpoint-iphone) {
+  body {
+    overflow: hidden;
+  }
+
+  .header {
+    margin-bottom:.5%;
+  }
+
+  .nav-wrapper {
+    .brand-logo {
+      font-size: $panel-text;
+      left: 15%;
+      margin-left: $ten-space;
+    }
+  }
+  .soc-nav {
+    position: absolute;
+    right: 0;
+    i {
+      font-size: 20px;
+      &:hover {
+        font-size: $panel-text;
+      }
+    }
+  }
+  .container {
+    margin-bottom: 35%;
+    .card-panel {
+      width: $main-width;
+      height: auto;
+      margin-top: 25%;
+      h3 {
+        margin-top: $thirtyfive-space;
+        font-size: $small-text;
+        margin-right: 50%;
+      }
+    }
+  }
+  .pokedex-text {
+    padding-bottom: $zero;
+    font-size: $blow-font;
+  }
+  .footer {
+    .card-panel {
+      padding: $zero;
+    }
+    .contact-info {
+      margin-bottom: $five-space;
+      font-size: 10px;
+    }
+    .site-nav {
+      li {
+        display: block;
+      }
+      a {
+        font-size: $small-text;
+      }
+    }
+    .fight {
+      margin-bottom: $five-space;
+      font-size: $small-text;
+    }
+    .copyright {
+      font-size: 10px;
+      margin-top: $ten-space;
+    }
+  }
+}
+
+@media only screen and (min-width: 376px) and (max-width: $breakpoint-phone) {
+  body {
+    overflow: hidden;
+  }
+
+  .header {
+    margin-bottom:.5%;
+  }
+
+  .nav-wrapper {
+    .brand-logo {
+      font-size: $icon-font;
+      left: 13%;
+      margin-left: $ten-space;
+    }
+  }
+  .soc-nav {
+    position: absolute;
+    right: 0;
+    i {
+      font-size: 20px;
+      &:hover {
+        font-size: $panel-text;
+      }
+    }
+  }
+  .container {
+    margin-bottom: 35%;
+    .card-panel {
+      width: $main-width;
+      height: auto;
+      margin-top: 25%;
+      h3 {
+        margin-top: $thirtyfive-space;
+        font-size: $nav-text;
+      }
+    }
+  }
+  .pokedex-text {
+    padding-bottom: $zero;
+    font-size: $blow-font;
+  }
+  .footer {
+    .card-panel {
+      padding: $zero;
+    }
+    .contact-info {
+      margin-bottom: $five-space;
+      font-size: 10px;
+    }
+    .site-nav {
+      li {
+        display: block;
+      }
+      a {
+        font-size: $small-text;
+      }
+    }
+    .fight {
+      margin-bottom: $five-space;
+      font-size: $small-text;
+    }
+    .copyright {
+      font-size: 10px;
+      margin-top: $ten-space;
+    }
+  }
+}
+
+@media only screen and (min-width: 641px) and (max-width: $breakpoint-tablet) {
+  body {
+    overflow: hidden;
+  }
+
+  .header {
+    margin-bottom: .5%;
+  }
+
+  .nav-wrapper {
+    .brand-logo {
+      font-size: $brand-font;
+      left: $ten-space;
+      margin-left: $ten-space;
+    }
+  }
+  .soc-nav {
+    position: absolute;
+    right: 0;
+    i {
+      font-size: $panel-text;
+      &:hover {
+        font-size: $icon-font;
+      }
+    }
+  }
+  .container {
+    margin-bottom: 15%;
+    .card-panel {
+      width: $main-width;
+      height: auto;
+      margin-top: $two-space;
+      padding: 27% 0;
+      h3 {
+        margin-top: 20%;
+        font-size: $panel-text;
+      }
+    }
+  }
+  .pokedex-text {
+    padding-bottom: $zero;
+    font-size: $brand-font;
+  }
+  .footer {
+    .card-panel {
+      padding: $zero;
+    }
+    .contact-info {
+      margin-bottom: $five-space;
+      font-size: $small-text;
+    }
+    .site-nav {
+      li {
+        display: $straight;
+      }
+      a {
+        font-size: $small-text;
+      }
+    }
+    .fight {
+      margin: $two-space;
+      font-size: $nav-text;
+    }
+    .copyright {
+      font-size: $small-text;
+      padding: 0 $five-space;
+      margin: $two-top-bot;
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: $breakpoint-desktop) {
+  body {
+    overflow: auto;
+  }
+
+  .header {
+    margin-bottom: $five-space;
+  }
+
+  .nav-wrapper {
+    .brand-logo {
+      font-size: $title-font;
+      left: $zero;
+      margin-left: $two-space;
+    }
+  }
+  .soc-nav {
+    position: absolute;
+    right: 0;
+    i {
+      font-size: $icon-font;
+      &:hover {
+        font-size: $blow-font;
+      }
+    }
+  }
+  .container {
+    margin-bottom: $two-space;
+    .card-panel {
+      width: $main-width;
+      height: auto;
+      margin-top: $ten-space;
+      padding: $thirtyfive-space 0;
+      h3 {
+        margin-top: $ten-space;
+        font-size: $blow-font;
+      }
+    }
+  }
+  .pokedex-text {
+    padding-bottom: $zero;
+    font-size: $title-font;
+  }
+  .poke-3 {
+    &:hover {
+      background-position: $bg-right;
+    }
+  }
+
+  .footer {
+    .card-panel {
+      padding: $zero;
+    }
+    .contact-info {
+      margin-bottom: $ten-space;
+      font-size: $small-text;
+    }
+    .site-nav {
+      li {
+        display: block;
+        padding: $two-space;
+      }
+      a {
+        font-size: $nav-text;
+      }
+    }
+    .fight {
+      margin: $five-space 0;
+      font-size: 20px;
+      &:hover {
+        font-size: $panel-text;
+      }
+    }
+    .copyright {
+      font-size: $small-text;
+      padding: 0 $five-space;
+      margin-top: $five-space;
+    }
+  }
+}

@@ -1,0 +1,287 @@
+/* @import url('modal.css'); */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Black Ops One', cursive;
+  color: #000;
+  background-color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  background: url('images/eeveelution.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* HEADER AREA */
+
+.header {
+  background-color: #000;
+  padding: 1% 1% 10% 1%;
+  margin-bottom: 5%;
+  /* opacity: .7; */
+  mix-blend-mode: lighten;  /*or hard-light */
+}
+
+/* .header, .header * {
+  border: 1px solid red;
+} */
+
+.nav-wrapper .brand-logo {
+  font-size: 50px;
+  color: #fff;
+  margin-top: $light-margin;
+}
+
+.soc-nav {
+  padding: $light-pad;
+}
+
+.soc-nav li a i {
+  color: $main-color;
+  font-size: $icon-font;
+  /* border: 1px solid red; */
+}
+
+
+/* POKEDEX */
+
+.container {
+  height: auto;
+  width: $main-width;
+  padding: $top-bot-pad;
+  margin-bottom: $medium-margin;
+  background-color: $container-bgc;
+  text-align: $position-mid;
+  color: $main-color;
+  mix-blend-mode: $hard-blend;
+}
+
+/* .container, .container * {
+  border: 1px solid green;
+} */
+
+.pokedex-text {
+  padding-bottom: $two-space;
+  font-size: $title-font;
+}
+
+.poke-grid {
+  padding: $ten-three;
+}
+
+.container .card-panel {
+  width: $main-width;
+  height: $panel-height;
+  align-content: $position-mid;
+  text-align: $position-mid;
+  opacity: $heavy-opacity;
+}
+
+.card-panel a {
+  font-size: $panel-text;
+}
+
+.card-panel h3 {
+  margin-top: $thirtyfive-space;
+}
+
+.poke-1 {
+  background-color: $water-color;
+}
+
+.poke-2 {
+  background-color: $electric-color;
+}
+
+.poke-3 {
+  background-color: $fire-color;
+}
+
+/* FOOTER AREA */
+
+.footer {
+  mix-blend-mode: $light-blend;
+}
+
+.footer .card-panel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-template-areas:
+  "contact . . fight"
+  "nav . . copyright";
+  padding: $two-space;
+  background-color: $copy;
+  color: $main-color;
+}
+
+.contact-info {
+  grid-area: contact;
+  margin-bottom: $ten-space;
+  font-size: $small-text;
+}
+
+.site-nav {
+  grid-area: nav;
+
+}
+
+.site-nav li {
+  display: $straight;
+  padding: $two-five;
+}
+
+.site-nav li a {
+  font-size: $nav-text;
+}
+
+.fight {
+  grid-area: fight;
+  font-family: $copy;
+  margin-bottom: $ten-space;
+  background-color: $blood;
+  text-transform: $upper;
+}
+
+
+
+.copyright {
+  grid-area: copyright;
+  font-size: $small-text;
+  text-align: $position-mid;
+}
+
+/* EFFECTS */
+
+.soc-nav:hover {
+  opacity: .8;
+}
+
+.soc-nav i:hover {
+  font-size: $blow-font;
+  transition: $mid-trans;
+}
+
+#blue i:hover {
+  color: $water-color;
+}
+
+#yellow i:hover {
+  color: $electric-color;
+}
+
+#red i:hover {
+  color: $fire-color;
+}
+
+.site-nav li a:hover {
+  font-weight: $heavy-text;
+  color: $blood;
+  transition: $short-trans;
+}
+
+
+.fight:hover {
+  background-color: $main-color;
+  color: $blood;
+  font-size: $panel-text;
+  transition: $mid-trans;
+}
+
+.poke-1:hover {
+  background: url('images/vaporeon.jpg') no-repeat;
+  background-size: $bg-cover;
+  color: $sky;
+  transition: $long-trans;
+}
+
+.poke-2:hover {
+  background: url('images/jolteon.png') no-repeat;
+  background-size: $bg-cover;
+  background-position: $bg-right;
+  color: $sun;
+  transition: $long-trans;
+}
+
+.poke-3:hover {
+  background: url('images/flareon.jpg') no-repeat;
+  background-size: $bg-cover;
+  color: $blood;
+  transition: $long-trans;
+}
+
+.poke-1:active, .poke-2:active, .poke-3:active {
+  color: #000;
+  transition: none;
+}
+
+/* MODAL */
+
+.modal {
+  display: $no-style;
+  position: fixed;
+  z-index: 1;
+  padding: $five-space;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: $main-width;
+  max-width: $main-width;
+  max-height: $main-height;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.pokemonInfo {
+  position: relative;
+  background-color: $global-bg-color;
+  color: $main-color;
+  margin: auto;
+  padding: $five-space;
+  width: $main-width;
+  height: $main-height;
+  border-radius: 1.5%;
+  opacity: $heavy-opacity;
+}
+
+#close {
+  color: $main-color;
+  position: absolute;
+  top: 1%;
+  right: 3.5%;
+  font-size: $icon-font;
+  font-weight: $heavy-text;
+}
+
+#close:hover {
+  color: rgba(238, 21, 21, 0.9);
+}
+
+#image {
+  height: $char-img-h;
+  weight: $char-img-w;
+}
+
+.pokemonInfo p {
+  margin-bottom: $two-space;
+}
+
+#name {
+  text-transform: $capital;
+}

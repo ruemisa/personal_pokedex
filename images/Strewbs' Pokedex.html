@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Strewbs' Pokedex</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Bungee+Inline|Monofett|Syncopate" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" type="text/css"> -->
+</head>
+<body>
+
+  <div class="wrapper">
+    <nav class="header">
+      <div class="nav-wrapper">
+        <a href="http://127.0.0.1:3000/#" class="brand-logo">Strewbs</a>
+        <ul class="right soc-nav">
+          <li><a href="http://127.0.0.1:3000/#" target="_blank" id="blue"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="http://127.0.0.1:3000/#" target="_blank" id="yellow"><i class="fas fa-camera-retro"></i></a></li>
+          <li><a href="http://127.0.0.1:3000/#" target="_blank" id="red"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <h1 class="pokedex-text">POKEDEX</h1>
+      <div class="row poke-grid">
+        <div class="col s4">
+          <div class="card-panel poke-1">
+            <a href="http://127.0.0.1:3000/" onclick="loadDoc()">
+              <h3 id="vaporeon">Vaporeon</h3>
+            </a>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="card-panel poke-2">
+            <a href="http://127.0.0.1:3000/">
+              <h3 id="jolteon">Jolteon</h3>
+            </a>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="card-panel poke-3">
+            <a href="http://127.0.0.1:3000/">
+              <h3 id="flareon">Flareon</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+  </div>
+    <div class="row footer">
+      <div class="col s12">
+        <div class="card-panel">
+          <div class="contact-info">
+            <p>+1 555.222.3322</p>
+            <p>strewbs@rocketmail.com</p>
+          </div>
+          <div class="site-nav">
+            <ul>
+              <li><a href="http://127.0.0.1:3000/#">Developers</a></li>
+              <li><a href="http://127.0.0.1:3000/#">Contract</a></li>
+            </ul>
+          </div>
+          <button class="btn btn-large fight">Let's Battle</button>
+          <span class="copyright">© 2018 | Ruel Misa. All rights reserved</span>
+          <div id="name"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./Strewbs&#39; Pokedex_files/main.js"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			console.log('Live reload enabled.');
+		})();
+	}
+	// ]]>
+</script>
+
+
+</body></html>
