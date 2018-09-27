@@ -2,9 +2,9 @@
 // created a global trainer object
 // Notes: 3 separate requests. Long API calls. it works smoothly if all data has been called.
 
-var pokemonArr = [];
+let pokemonArr = [];
 
-var Strewbs = {
+let Strewbs = {
   all: function() {
     // console.log(Strewbs.pokemon);
     pokemonArr = Object.entries(Strewbs.pokemon);
@@ -20,10 +20,10 @@ var Strewbs = {
 
 // VAPOREON
 
-var vaporRequest = new XMLHttpRequest();
+const vaporRequest = new XMLHttpRequest();
 //2018.7.24 No onreadystatechange or readystate if statment needed!
 vaporRequest.onload = function() {
-  var vaporData = JSON.parse(this.response); //manage data in a readable code
+  const vaporData = JSON.parse(this.response); //manage data in a readable code
     console.log(vaporData);      // helps me read data through console
 
     Strewbs.pokemon = {   // created pokemon obj to house the pokemons inside trainer obj
@@ -38,15 +38,15 @@ vaporRequest.onload = function() {
 
 }
 // API request
-vaporRequest.open("GET", "https://pokeapi-nycda.firebaseio.com/pokemon/134.json", true);
+vaporRequest.open("GET", "https://pokeapi.co/api/v2/pokemon/134/", true);
 vaporRequest.send();
 
 // JOLTEON
 
-var jolteonRequest = new XMLHttpRequest();
+const jolteonRequest = new XMLHttpRequest();
 
 jolteonRequest.onload = function() {
-  var jolteonData = JSON.parse(this.response);
+  const jolteonData = JSON.parse(this.response);
     console.log(jolteonData);
 
     Strewbs['pokemon']['jolteon'] = {
@@ -58,15 +58,15 @@ jolteonRequest.onload = function() {
     };
 
 }
-jolteonRequest.open("GET", "https://pokeapi-nycda.firebaseio.com/pokemon/135.json", true);
+jolteonRequest.open("GET", "https://pokeapi.co/api/v2/pokemon/135/", true);
 jolteonRequest.send();
 
 // FLAREON
 
-var flareonRequest = new XMLHttpRequest();
+const flareonRequest = new XMLHttpRequest();
 
 flareonRequest.onload = function() {
-  var flareonData = JSON.parse(this.response);
+  const flareonData = JSON.parse(this.response);
     console.log(flareonData);
 
     Strewbs['pokemon']['flareon'] = {
@@ -78,7 +78,7 @@ flareonRequest.onload = function() {
     };
 
 }
-flareonRequest.open("GET", "https://pokeapi-nycda.firebaseio.com/pokemon/136.json", true);
+flareonRequest.open("GET", "https://pokeapi.co/api/v2/pokemon/136/", true);
 flareonRequest.send();
 
 
@@ -88,11 +88,11 @@ flareonRequest.send();
 
 // DISPLAY Pokemon
 
-function openDisplay(name) { // argument through choices in HTML
+const openDisplay = (name) => { // argument through choices in HTML
   Strewbs.get(name);  // to display object properties of target
   Strewbs.all();  // to place all pokemon in an array
   array = pokemonArr;  // to this array
-  var i; // access pokemon count through the array above
+  let i; // access pokemon count through the array above
 
   document.getElementById('displayBox').style.display = "block";
   document.getElementById('displayStats').style.color = "black";
@@ -146,7 +146,7 @@ function openDisplay(name) { // argument through choices in HTML
 
 // To close Modal
 
-function closeDisplay() {
+const closeDisplay = () => {
   document.getElementById('displayBox').style.display = "none";
 }
 
